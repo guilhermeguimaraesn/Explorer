@@ -1,2 +1,2 @@
 # Explorer
-Repositório para os projetos realizados pelo curso Explorer da Rocketseat
+Repositório para os projetos realizados no curso Explorer da Rocketseat
