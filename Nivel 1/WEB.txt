@@ -1,0 +1,25 @@
+WEB
+
+O que é a WEB?
+	WEB = teia
+		Representar a rede mundial de computadores
+Como funciona a WEB?
+	Por debaixo dos panos
+		Digita uma URL
+			HTTP - Hypertext Tranfer Protocol
+			Função: Trocar mensagens
+			URL - Uniform Resourse locator
+		Linha de comunicação, protocolo TCP
+			Cliente - solicita
+			Servidor - entrega
+			TCP - Transmission Control Protocol
+		Converter IP
+			DNS - Domain Name System
+				Converter Um dominio em IP
+			IP - Internet Protocol
+		Perconrrendo Proxy 
+			Proxy - Qualquer dispositivo no meio do caminho
+		Seridor
+			Analisa a solicitação e entrega uma resposta
+		
+		

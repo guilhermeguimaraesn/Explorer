@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Declaração de variáveis para serem utilizadas durante o código*/
+:root {
+    --ff-heading: 'Epilogue', sans-serif;
+    --ff-texting: 'Open sans', sans-serif;
+
+    --hue: 250;
+    --bg-primary: hsl(var(--hue), 22%, 20%);
+    --fc-primary: #ffffff;
+    --fc-secondary: hsl(var(--hue), 50%, 80%);
+    --fc-secondary-dark: #090039;
+
+    font-size: 62.5%;
+    --fs-body: 1.6rem;
+    --fs-heading: clamp(4rem, 1rem  + 5vw, 5.6rem );
+    --fs-heading-sm: clamp(3rem, 0.5rem  + 3vw, 4rem );
+}
+
+body {
+    font-family: var(--ff-heading);
+    background-color: var(--bg-primary);
+
+    color: var(--fc-primary);
+}
+
+.page {
+    max-width: clamp(33rem, 30rem + 60vw, 117rem);
+    padding: 0 5rem;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+header {
+    margin: 10rem 0 8rem;
+    font-family: var(--ff-texting);
+    text-align: center;
+
+    animation: topdown 700ms;
+
+}
+
+header p {
+    color: var(--fc-secondary);
+    text-transform: uppercase;
+
+    font-weight: 400;
+
+    line-height: 3.2rem;
+    letter-spacing: 3px;
+
+    margin-bottom: 1, 7rem;
+
+}
+
+header h1 {
+    font-weight: 800;
+    font-size: var(--fs-heading);
+    line-height: 4.8rem;
+}
+
+main {
+    display: grid;
+    gap: 3.2rem;
+
+    animation: downtop 700ms 350ms backwards;
+}
+
+.card {
+    position: relative
+}
+
+.card img {
+    height: 41.6rem;
+    object-fit: cover;
+    border-radius: 0.6rem;
+
+    transition: all 200ms;
+
+    filter: brightness(0.5) saturate(1.5);
+}
+
+.card img:hover {
+    transform: scale(1.1);
+    opacity: 0.5;
+
+}
+
+.card h2 {
+    position: absolute;
+    bottom: 5.2rem;
+    left: 2.8rem;
+
+    font-size: var(--fs-heading);
+    font-weight: 800;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.3rem;
+}
+
+.card h2 span {
+    background-color: var(--fc-primary);
+    border-radius: 2rem;
+
+    font-family: var(--ff-heading);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+
+    color: var(--fc-secondary-dark);
+
+    padding: 0 1.5rem;
+    height: 3.8rem;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+}
+
+/*Animação do titulo*/
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Animação das imagens*/
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*Ajuste para telas a partir de 700px até 929px de largura*/
+@media (min-width: 700px) {
+    :root {
+        --fs-heading: 5.6rem;
+    }
+
+    .page {
+        max-width: 177rem;
+        margin: 0 auto;
+
+        padding: 0 5rem;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/*Ajuste para telas a partir de 930px*/
+@media (min-width: 930px) {
+    
+    main {
+        display: grid;
+        grid-template-areas: "colA colB colB" "colC colC colD "; /* Dividindo a grid em áreas e quantas áreas quero para cada imagem*/
+        
+        gap: 3.2rem;
+
+        animation: downtop 700ms 350ms backwards;
+
+    }
+    /* nomeando as divs que estão as imagens nas ordens de cada área*/
+    main div:nth-child(1) {
+        grid-area: colA;
+    }
+
+    main div:nth-child(2) {
+        grid-area: colB;
+    }
+
+    main div:nth-child(3) {
+        grid-area: colC;
+    }
+
+    main div:nth-child(4) {
+        grid-area: colD;
+    }
+}

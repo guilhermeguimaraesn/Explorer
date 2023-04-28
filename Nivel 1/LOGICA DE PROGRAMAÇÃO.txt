@@ -1,0 +1,25 @@
+LOGICA DE PROGRAMAÇÃO
+
+Maneira de pensar:
+	Programção imperativa
+		passo a passo
+		como fazer
+	Programação declarativa
+		Conjunto de regras
+		O que fazer
+Como o computador entende?
+	Recebe e processa as ordens
+	Você entende o e dá as instruções para o computador saber o que fazer
+Dar instruções:
+	Receita de um bolo
+		Dados
+			string - sequencia de caracteres
+			number - -1, 0, 22
+			Boolean - true/false
+		Manipulação
+			Transformação
+			Execução
+	Exemplos
+		Fazer café
+		Postar no instagram
+

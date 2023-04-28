@@ -1,0 +1,21 @@
+FrontEnd VS BackEnd
+
+Cliente -> Browser -> Servidor
+
+FrontEnd
+	Cliente
+		HTML
+		CSS
+		JavaScript
+		Fremeworks e libraries
+		Ferramentas
+BackEnd
+	Servidor
+		Linguagem de Programação
+			PHP
+			Java
+			Python
+			JavaScript
+		Banco de Dados
+			SQL - Relacional 
+			NoSQL - Não Relacional
