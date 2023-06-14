@@ -12,7 +12,6 @@ btnReset.addEventListener('click', handleResetClick)
 
 // funções
 function handleTryClick(event) {
-    // função callback
     event.preventDefault() // não faça o padrão
 
     const inputNumber = document.querySelector("#inputNumber")
