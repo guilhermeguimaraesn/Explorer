@@ -12,6 +12,14 @@ const buttonSoundRain = document.querySelector('.sound-rain')
 const buttonSoundFire = document.querySelector('.sound-fire')
 const buttonSoundCoffe = document.querySelector('.sound-coffe')
 
+const buttonSol = document.querySelector('.button-sol')
+const buttonLua = document.querySelector('.button-lua')
+
+const sliderRain = document.querySelector('.slide-rain')
+const sliderTree = document.querySelector('.slide-tree')
+const sliderFire = document.querySelector('.slide-fire')
+const sliderCoffe = document.querySelector('.slide-coffe')
+
 export {
     buttonPlay,
     buttonPause,
@@ -23,5 +31,11 @@ export {
     buttonSoundTree,
     buttonSoundRain,
     buttonSoundFire,
-    buttonSoundCoffe
+    buttonSoundCoffe,
+    sliderRain,
+    sliderCoffe,
+    sliderFire,
+    sliderTree,
+    buttonLua,
+    buttonSol
 }

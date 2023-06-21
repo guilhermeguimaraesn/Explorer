@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --bg-home: image-set(url("./asstets/mountains-universe-1.png")) ;  
+    --tt-button-select: #02799D;
+
+    font-size: 62.5%;
+}
+
+body {
+    background-image: var(--bg-home); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-size: 1.6rem;
+
+    font-family: 'Roboto',sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center ;
+    gap: 3.2rem;
+
+    padding: 4rem;
+
+}
+
+nav li {
+    display: inline;
+    
+    margin-right: 3.2rem;
+}
+
+nav a{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    font-weight: 700;
+    opacity: 1;
+}
+
+#tittle {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 17.2rem;
+    gap: 2.4rem;
+}
+
+#tittle h1 {
+    color: var(--text-color)
+}
+
+#tittle button {
+    background: transparent;
+    color: var(--text-color);
+    border-color: solid var(--text-color);
+    border-radius: 0.5rem;
+    padding: 1.2rem 3.2rem ;
+    transition: 0.5s;
+}
+
+#tittle button:hover {
+    cursor: pointer;
+    background-color: var(--text-color);
+    color: var(--tt-button-select);
+    transform: scale(1.1);
+}

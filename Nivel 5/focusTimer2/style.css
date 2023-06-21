@@ -16,13 +16,14 @@
     --bg-button-select: #02799D;
     --tt-button-select: white;
 
+    --text-timer:#323238;
+
     --ft-timer: 'Roboto', sans-serif;
 }
 
 body {
-
     background-color: var(--bg-corlor);
-    color: var(--tt-color);
+    color: var(--text-timer);
 
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -31,14 +32,27 @@ body {
     min-height: 100vh;
 }
 
+header {
+    display: flex;
+   justify-content: flex-end;
+}
+
+.aparence {
+    padding: 6.4rem 6.4rem 0 0 ;
+}
+
+.aparence button {
+    background: transparent;
+    border: none;
+    transition: 0.5s;
+}
+
 main {
     align-self: center;
     justify-self: center;
     display: flex;
     gap: 17rem;
     padding: 19rem 23rem;
-
-
 }
 
 .timer {
@@ -49,6 +63,12 @@ main {
 .timer span {
     font-family: var(--ft-timer);
     font-size: 12.6rem;
+}
+
+button:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transition: 0.5s;
 }
 
 .controls {
@@ -67,24 +87,23 @@ main {
 
     height: 4.8rem;
     width: 4.8rem;
-}
 
-/* .controls  */
-button:hover {
-    cursor: pointer;
-    scale: 1.1;
     transition: 0.5s;
 }
 
-.cards {
+.controls button svg path {
+    fill: var(--tt-button-base);
+}
 
+.cards {
+    
     display: grid;
     gap: 3.2rem;
-
+    
     position: relative;
     grid-template-areas:
-        "A B"
-        "C D"
+    "A B"
+    "C D"
     ;
 }
 
@@ -102,10 +121,6 @@ button:hover {
     fill: var(--tt-button-base)
 }
 
-/* .on {
-    opacity: 0;
-} */
-
 .cards button.on svg path:nth-child(1) {
     fill: var(--bg-button-select);
 }
@@ -114,10 +129,59 @@ button:hover {
     fill: var(--tt-button-select);
 }
 
-/* button svg path:nth-child(2) {
-    fill: var(--tt-button-select)
-} */
+.sliders {
+    position: relative;
+    scale: 0.8;
+    bottom: 4rem;
+    
+    border: none;
+}
+
+.slide-tree,
+.slide-rain,
+.slide-fire,
+.slide-coffe {
+    appearance: none;
+    background: var(--tt-button-base);
+    height: 0.5rem;
+    border-radius: 10rem;
+}
+
+.slide-tree::-webkit-slider-thumb,
+.slide-rain::-webkit-slider-thumb,
+.slide-fire::-webkit-slider-thumb,
+.slide-coffe::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--tt-button-base);
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 10rem;
+}
+
+.slide-rain.on,
+.slide-tree.on,
+.slide-fire.on,
+.slide-coffe.on {
+    appearance: none;
+    background: var(--tt-button-select);
+    height: 0.5rem;
+    border-radius: 10rem;
+}
+
+.slide-rain.on::-webkit-slider-thumb,
+.slide-tree.on::-webkit-slider-thumb,
+.slide-fire.on::-webkit-slider-thumb,
+.slide-coffe.on::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--tt-button-select);
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 10rem;
+}
+
+
 
 .hide {
     display: none;
 }
+

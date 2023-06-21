@@ -1,20 +1,42 @@
-import { buttonPlay,
+import {
+    buttonPlay,
     buttonPause,
     buttonStop,
     buttonPlus,
     buttonLess,
-    minutesDisplay,
-    secondsDisplay,
     buttonSoundTree,
     buttonSoundRain,
     buttonSoundFire,
-    buttonSoundCoffe} from "./elements.js"
+    buttonSoundCoffe,
+    buttonLua,
+    buttonSol,
+} from "./elements.js"
 
-import {soundTree,
-    soundRain,
-    soundFire,
-    soundCoffe,
-    kitchenTimer} from "./sound.js"
+import {
+    onButtonTree,
+    onButtonRain,
+    onButtonFire, 
+    onButtonCoffe,
+    onSliderTree,
+    onSliderRain,
+    onSliderFire,
+    onSliderCoffe,
+    playSoundTree,
+    playSoundRain,
+    playSoundFire,
+    playSoundCoffe,
+    setVolumeTree,
+    setVolumeRain,
+    setVolumeFire,
+    setVolumeCoffe,
+    darkMode,
+    lightMode,
+    countDown,
+    plusTimer,
+    resetTimer,
+    lessTimer,
+    timerTimeOut
+} from "./controls.js"
 
 // buttons controls timer
 buttonPlay.addEventListener('click', function () {
@@ -36,116 +58,48 @@ buttonStop.addEventListener('click', function () {
 })
 
 buttonPlus.addEventListener('click', function () {
-     plusTimer()
+    plusTimer()
 })
 
 buttonLess.addEventListener('click', function () {
-     lessTimer()
+    lessTimer()
 })
 
 // buttons sounds
-buttonSoundTree.addEventListener('click', function() {
-    buttonSoundRain.classList.remove('on') 
-    buttonSoundFire.classList.remove('on')
-    buttonSoundCoffe.classList.remove('on')
-    buttonSoundTree.classList.add('on')
-    soundTree.play()
-    soundCoffe.pause()
-    soundFire.pause()
-    soundRain.pause()
+buttonSoundTree.addEventListener('click', function () {
+    onButtonTree()
+    onSliderTree()
+    playSoundTree()
+    setVolumeTree()
 })
 
-buttonSoundRain.addEventListener('click', function() {
-    buttonSoundTree.classList.remove('on')
-    buttonSoundFire.classList.remove('on')
-    buttonSoundCoffe.classList.remove('on')
-    buttonSoundRain.classList.add('on')
-
-    soundTree.pause()
-    soundCoffe.pause()
-    soundFire.pause()
-    soundRain.play()
+buttonSoundRain.addEventListener('click', function () {
+    onButtonRain()
+    onSliderRain()
+    playSoundRain()
+    setVolumeRain()
 })
 
-buttonSoundFire.addEventListener('click', function() {
-    buttonSoundTree.classList.remove('on')
-    buttonSoundRain.classList.remove('on')
-    buttonSoundCoffe.classList.remove('on')
-    buttonSoundFire.classList.add('on')
-
-    soundTree.pause()
-    soundCoffe.pause()
-    soundFire.play()
-    soundRain.pause()
+buttonSoundFire.addEventListener('click', function () {
+    onButtonFire()
+    onSliderFire()
+    playSoundFire()
+    setVolumeFire()
 })
 
-buttonSoundCoffe.addEventListener('click', function() {
-    buttonSoundTree.classList.remove('on')
-    buttonSoundRain.classList.remove('on')
-    buttonSoundFire.classList.remove('on')
-    buttonSoundCoffe.classList.add('on')
-
-    soundTree.pause()
-    soundCoffe.play()
-    soundFire.pause()
-    soundRain.pause()
+buttonSoundCoffe.addEventListener('click', function () {
+    onButtonCoffe()
+    onSliderCoffe()
+    playSoundCoffe()
+    setVolumeCoffe()
 })
 
-let timerTimeOut
-let minutes = Number(minutesDisplay.textContent)
+//DARKMODE ON - OFF
+buttonSol.addEventListener('click', function () {
+    darkMode()
+})
+buttonLua.addEventListener('click', function () {
+    lightMode()
+})
 
-function updateTimerDisplay(newMinutes, seconds) {
-    newMinutes = newMinutes === undefined ? minutes : newMinutes
-    seconds = seconds === undefined ? 0 : seconds
-    minutesDisplay.textContent = String(newMinutes).padStart(2, "0")
-    secondsDisplay.textContent = String(seconds).padStart(2, "0")
-}
-
-function countDown() {
-    timerTimeOut = setTimeout(function () {
-        let seconds = Number(secondsDisplay.textContent)
-        let minutes = Number(minutesDisplay.textContent)
-        let isFinished = minutes <= 0 && seconds <= 0
-
-        updateTimerDisplay(minutes, 0)
-
-        if (isFinished) {
-            // resetControls()
-            updateTimerDisplay()
-            kitchenTimer.play()
-            // Sounds().timeEnd()
-            return
-        }
-
-        if (seconds <= 0) {
-            seconds = 6
-            --minutes
-        }
-
-        updateTimerDisplay(minutes, String(seconds - 1))
-
-        countDown()
-    }, 1000)
-
-   
-
-}
-
-function resetTimer() {
-    updateTimerDisplay(minutes, 0)
-    clearTimeout(timerTimeOut)
-}
-
-function plusTimer() {
-    minutes = minutes + 5
-    minutesDisplay.textContent = String(minutes).padStart(2, "0")
-}
-
-function lessTimer() {
-    if (minutes > 0) {
-        minutes = minutes - 5
-    }
-    
-    minutesDisplay.textContent = String(minutes).padStart(2, "0")
-}
 
