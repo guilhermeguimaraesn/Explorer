@@ -6,14 +6,15 @@
 
 :root {
     --text-color: white;
-    --bg-home: image-set(url("./asstets/mountains-universe-1.png")) ;  
+    --bg-home: image-set(url("./asstets/home.png")) ;  
+    --bg-universo: image-set(url("./assetets/universe.png"))
     --tt-button-select: #02799D;
 
     font-size: 62.5%;
 }
 
 body {
-    background-image: var(--bg-home); 
+    background-image: var(--bg-home);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -22,6 +23,14 @@ body {
     font-size: 1.6rem;
 
     font-family: 'Roboto',sans-serif;
+}
+
+.home {
+    background-image: var(--bg-home);
+}
+
+.universe {
+    background-image: var(--bg-universo);
 }
 
 nav {
@@ -82,4 +91,22 @@ nav a:hover {
     background-color: var(--text-color);
     color: var(--tt-button-select);
     transform: scale(1.1);
+}
+
+#tittle h2, p {
+    align-self: flex-start;
+    justify-self: center;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin-left: 10.2rem;
+    margin-right: 57rem;
+    gap: 2.4rem;
+    color: var(--text-color)
+}
+
+h2 {
+    font-size: 4.8rem;
+    font-family: 'Roboto', sans-serif;
 }

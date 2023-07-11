@@ -23,5 +23,8 @@ export class Router {
         document.querySelector('#app').innerHTML = html
       })
     }
-  
+
+    trocarBackground() {
+      document.documentElement.style.setProperty('--bg-home', ' image-set(url("./assetets/universe.png"))');
+    }
   }
